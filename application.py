@@ -35,6 +35,7 @@ def login():
     if session:
         return redirect("/")
     else:
+        session.clear()
         username = request.form.get("username")
         password = request.form.get("password")
 
@@ -97,6 +98,7 @@ def register():
         if session:
             return redirect("/")
         else:
+            session.clear()
             return render_template("register.html")
 
 @app.route("/search", methods=["GET","POST"])
