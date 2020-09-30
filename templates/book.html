@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="reviews-page">
+    {% for book in data %}
+    <div class="d-inline-flex">
+        <img class="cover-img" src="http://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg">    
+        <ul class="list-group data">
+            <div class="card-header"><strong>{{book.title}}</strong></div>
+            <li class="list-group-item"><strong>Author</strong>: {{book.author}}</li>
+            <li class="list-group-item"><strong>Year</strong>: {{book.year}}</li>
+            <li class="list-group-item"><strong>Isbn</strong>: {{book.isbn}}</li>
+            <li class="list-group-item"><strong>Rating</strong>: {{work_ratings_count}}</li>
+            <li class="list-group-item"><strong>Average rate</strong>: {{average_rating}}</li>
+        </ul>
+    </div>
+    <ul class="list-group list-group-flush"><p class="reviews-title"><strong>Reviews</strong></p>
+    {% for review in reviews %}
+    {% if review.rating >= 3 %}
+        <li class="review list-group-item list-group-item-success shadow p-3 mb-5 "><i class="fa fa-thumbs-o-up"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong> </li>
+    {% else %}
+        <li class="review list-group-item list-group-item-danger"><i class="fa fa-thumbs-o-down"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong> </li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+    <form class='form-group' method="post">
+        <label class='text-info'><i class="fa fa-pencil"></i>Write your review...</label>
+            <textarea class="textarea form-control" name="textarea" placeholder="Review" required></textarea>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-1">
+                    <select name="stars" class='custom-select mr-sm-2' required>
+                        <option selected value disabled> Rate the book</option>
+                        <option value="1">1 stars</option>
+                        <option value="2">2 stars</option>
+                        <option value="3">3 stars</option>
+                        <option value="4">4 stars</option>
+                        <option value="5">5 stars</option>
+                    </select> 
+                </div>
+            </div>
+        <button class="btn-submit my-2 btn btn-info" type="submit"><i class="fa fa-check-circle"></i>Send Review</button>
+    </form>
+</div>
+    {% endfor %}
+{% endblock %}

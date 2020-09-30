@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container shadow" id="login">
+    <form action="/register" method="post">
+        <div class="form-group" style="padding-top:8px;">
+            <label class="user" for="validationCustom01"><strong>Username</strong></label>
+            <input id='username' autocomplete="off" autofocus class="form-control user-imput" name="username" placeholder="Username" type="text" required>
+        </div>
+        <div class="form-group">
+            <label class="user" for="validationCustom01"><strong>Password</strong></label>
+            <label class="important">Must contain at least 8 characters, including a letter and a number</label>
+            <input id='pass' class="form-control user-imput" name="password" placeholder="Password" type="password" required>
+        </div>
+        <div class="form-group">
+            <label class="user" for="validationCustom01"><strong>Confirm password</strong></label>
+            <input id='confirm-pass' class="form-control user-imput" name="confirm-password" placeholder="Confirm Password" type="password" required>
+        </div>
+        <button id='submit' class="btn btn-login btn-info" type="submit">Register</button>
+    </form>
+</div>
+
+<script>
+    // Password validation for +7 char whit a number
+        document.querySelector('#submit').disabled = true;
+        document.querySelector('#pass').onkeyup = function() {
+            let password = document.querySelector('#pass').value;
+
+            if (password.length > 7 && password.match(/^[0-9a-z]+$/i) && password.match(/\d/) && password.match(/[a-z]/i)){
+                document.querySelector('#submit').disabled = false;
+            }
+            else {
+                document.querySelector('#submit').disabled = true;
+            }
+        }
+</script>
+{% endblock %}

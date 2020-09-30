@@ -1,0 +1,330 @@
+/* NORMAL */
+body{
+    background-color: #fff9eb;
+}
+
+.navbar{
+    background-color: #fff3d9 !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&family=Sora:wght@500&display=swap');
+
+i{
+    margin-right: 2px;
+}
+
+::selection {
+    background: #fccd49; /* WebKit/Blink Browsers */
+  }
+
+::-moz-selection {
+background: #fccd49; /* Gecko Browsers */
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .nav-item{
+        font-size: 60px;
+        font-family: 'Sora', sans-serif;
+        text-align: center;
+    }
+    .navbar-toggler-icon{
+        font-size: 40px;
+    }
+    .search-input{
+        margin-left: 25%;
+        font-size: 60px;
+    }
+    .btn-search{
+        font-size: 60px;
+        margin-left:10px
+    }
+
+    .book-img{
+        margin-top: 100px;
+    }
+
+    .quote{
+        text-align: center;
+        margin-top: 100px; 
+        font-size: 100px;
+        font-family: 'Lexend Tera', sans-serif;
+    }
+    .card{
+        width: 100%; 
+        display: inline-block; 
+        margin-top: 10px;
+        background-color: #fffdf5;
+    }
+    .found{
+        text-align:center;
+        margin:20px 0px; 
+        font-size: 80px;
+        font-family: 'Lexend Tera', sans-serif;
+    }
+
+    .card-title{
+        font-size: 46px;
+        font-weight: bold;
+    }
+    .card-text{
+        font-size: 42px;
+    }
+    .btn-book{
+        font-size: 40px;
+    }
+
+    .error{
+        margin-top: 80px;
+    }
+    
+    .alert{
+        text-align: center; 
+        font-size: 80px;
+    }
+
+    #login{
+        color:black;
+        background-color:#fffefa; 
+        padding-top:15px; 
+        padding-bottom:15px;
+        margin-top: 10%;
+        width: 100%;
+    }
+    .user{
+        font-size: 54px;
+    }
+    .important{
+        font-size: 38px;
+    }
+
+    .btn-login{
+        font-size: 40px;
+    }
+
+    .user-imput{
+        font-size: 40px;
+    }
+
+    .cover-img{
+        width:400px;
+        margin-left:20px; 
+        margin-top:20px;
+    }
+    
+    .card-header{
+        margin-top: 20px; 
+        background-color: black; 
+        color:white; 
+        font-size: 36px; 
+        font-family:'Montaga', serif;
+    }
+    
+    .reviews-title{
+        margin-top: 50px; 
+        font-family: 'Lexend Tera', sans-serif;
+        font-size: 60px;
+    }
+    
+    .review{
+        padding-top: 10px; 
+        margin-bottom:5px;
+        font-size: 30px;
+    }
+    
+    .data{
+        margin-left: 20px;
+        font-size: 34px;
+    }
+    .reviews-page{
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+
+    .text-info{
+        font-size: 30px;
+    }
+
+    .textarea{
+        font-size: 30px;
+    }
+
+    .btn-submit{
+        font-size: 30px;
+    }
+    .custom-select{
+        font-size: 30px;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px){
+    .nav-item{
+        font-size: 36px;
+        font-family: 'Sora', sans-serif;
+    }
+    .search-input{
+        font-size: 30px;
+    }
+    .btn-search{
+        font-size: 30px;
+        margin-left: 6px;
+    }
+
+    .card-title{
+        font-size: 34px;
+        font-weight: bold;
+    }
+    .card-text{
+        font-size: 28px;
+    }
+    .btn-book{
+        font-size: 28px;
+    }
+    .user{
+        font-size: 48px;
+    }
+
+    .important{
+        font-size: 30px;
+    }
+
+    .btn-login{
+        font-size: 36px;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1024px) {
+    .nav-item{
+        font-size: 18px;
+        font-family: 'Sora', sans-serif;
+    }
+    .search-input{
+        margin-left: 0%;
+        font-size: 18px;
+    }
+    .btn-search{
+        font-size: 18px;
+        margin-left: 6px;
+    }
+    .book-img{
+        margin-top: 40px;
+        height: 100%; 
+        width: 100%;
+    }
+    .quote{
+        text-align: center;
+        margin-top: 50px; 
+        font-size: 40px;
+        font-family: 'Lexend Tera', sans-serif;
+    }
+    .card{
+        width: 367px; 
+        display: inline-block; 
+        margin-top: 2px;
+        background-color: #fffdf5;
+    }
+    .found{
+        text-align:center;
+        margin:20px 0px; 
+        font-family: 'Lexend Tera', sans-serif;
+        font-size: 50px;
+    }
+
+    .card-title{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .card-text{
+        font-size: 16px;
+    }
+    .btn-book{
+        font-size: 16px;
+    }
+
+    .error{
+        margin-top: 20px;
+    }
+    
+    .alert{
+        text-align: center; 
+        font-size: 40px;
+    }
+
+    #login{
+        color:black;
+        background-color:#fffefa; 
+        padding-top:15px; 
+        padding-bottom:15px;
+        margin-top: 6%;
+        width: 30%;
+    }
+
+    .user{
+        font-size: 22px;
+    }
+    .important{
+        font-size: 16px;
+    }
+
+    .btn-login{
+        font-size: 16px;
+    }
+
+    .user-imput{
+        font-size: 16px;
+    }
+
+    .cover-img{
+        width:225px;
+        margin-left:20px; 
+        margin-top:20px;
+    }
+    
+    .card-header{
+        margin-top: 20px; 
+        background-color: black; 
+        color:white; 
+        font-size: 20px; 
+        font-family:'Montaga', serif;
+    }
+    
+    .reviews-title{
+        margin-top: 50px; 
+        font-family: 'Lexend Tera', sans-serif;
+        font-size: 30px;
+    }
+    
+    .review{
+        padding-top: 10px; 
+        margin-bottom:5px;
+        font-size: 16px;
+    }
+    
+    .data{
+        font-size: 16px;
+        margin-left: 20px;
+    }
+    .reviews-page{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .text-info{
+        font-size: 20px;
+    }
+    .textarea{
+        font-size: 16px;
+    }
+
+    .btn-submit{
+        font-size: 16px;
+    }
+    .custom-select{
+        font-size: 16px;
+    }
+}
