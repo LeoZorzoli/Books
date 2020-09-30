@@ -2,3 +2,4 @@ Flask
 Flask-Session
 SQLAlchemy
 requests
+gunicorn
