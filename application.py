@@ -47,7 +47,7 @@ def login():
             result = rows.fetchone()
 
             if result == None or not check_password_hash(result[2], request.form.get("password")):
-                    return render_template("error.html", message="Wrong username or password")
+                    return render_template("login.html", message="Wrong username or password")
 
             # Remember which user has logged in
             session["user_id"] = result[0]

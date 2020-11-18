@@ -49,6 +49,13 @@ body{
     color: #00c489;
 }
 
+.alert{
+    margin-top: 40px;
+    color: #00c489;
+    font-size: 26px;
+    text-align: center;
+}
+
 .btn-right{
     text-align: right;
 }
