@@ -23,9 +23,9 @@
     {% endif %}
     {% for review in reviews %}
     {% if review.rating >= 3 %}
-        <li class="review list-group-item list-group-item-success shadow p-3 mb-5 "><i class="fa fa-thumbs-o-up"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong> </li>
+        <li class="review list-group-item p-3 mb-2 "><i class="fa fa-thumbs-o-up"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong> </li>
     {% else %}
-        <li class="review list-group-item list-group-item-danger"><i class="fa fa-thumbs-o-down"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong> </li>
+        <li class="review list-group-item p-3 mb-2"><i class="fa fa-thumbs-o-down"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong></li>
     {% endif %}
     {% endfor %}
     </ul>

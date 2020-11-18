@@ -40,11 +40,12 @@ body{
 .nav-link{
     color: white !important;
     font-family: monospace !important;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
 }
 
 .write-review{
+    margin-top: 40px;
     color: #00c489;
 }
 
@@ -53,6 +54,7 @@ body{
 }
 
 .reviews-title{
+    margin-top: 20px;
     color: #00c489;
 }
 
