@@ -1,10 +1,141 @@
 /* NORMAL */
 body{
-    background-color: #fff9eb;
+    background-color: #16141f;
 }
 
 .navbar{
-    background-color: #fff3d9 !important;
+    background-color: transparent;
+    padding: 2px !important;
+    border-bottom: 6px solid #00c489;
+}
+
+.form-group{
+    color: white;
+}
+
+.navbar-toggler{
+    background-color: #00c489 ;
+}
+
+.data{
+    margin-top: 40px;
+}
+
+.home{
+    font-size: 40px !important;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.nav-link:hover{
+    color: #00c489 !important;
+    transition: 0.5s;
+}
+
+.form-info{
+    margin-top: 20px;
+    width: 30%;
+}
+
+.nav-link{
+    color: white !important;
+    font-family: monospace !important;
+    font-size: 22px;
+    text-align: center;
+}
+
+.write-review{
+    color: #00c489;
+}
+
+.btn-right{
+    text-align: right;
+}
+
+.reviews-title{
+    color: #00c489;
+}
+
+.founded{
+    text-align: center;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 10px;
+    font-size: 40px;
+}
+
+.books{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.btn-search{
+    margin-right: 6px;
+}
+
+.top-books{
+    font-family: "Caveat", cursive;
+    font-size: 40px;
+}
+
+.book{
+    margin-bottom: 10px;
+}
+
+.title{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.image__box{
+  background: #000;
+  padding: 10px;
+  overflow: hidden;
+}
+.image__box img{
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+}
+.text__box{
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  transition: .5s;
+  left: 0px;
+}
+
+.image__box:hover .text__box{
+  bottom: -0%;
+}
+
+.image__box:hover img{
+  opacity: 20%;
+}
+
+.book-info{
+  font-size: 30px;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  font-family: 'Sora', sans-serif;
+}
+
+.top{
+  margin-top: 20%;
+}
+
+.link{
+  font-family: 'Roboto Slab', serif;
+  color: grey;
+}
+
+.link:hover{
+  text-decoration: none;
+  color: white;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&family=Sora:wght@500&display=swap');
@@ -13,318 +144,46 @@ i{
     margin-right: 2px;
 }
 
-::selection {
-    background: #fccd49; /* WebKit/Blink Browsers */
-  }
-
-::-moz-selection {
-background: #fccd49; /* Gecko Browsers */
+.quote{
+    color: #f0f0f0;
+    font-size: 60px;
 }
 
+.book-img{
+    margin-top: 30px;
+}
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .nav-item{
-        font-size: 60px;
-        font-family: 'Sora', sans-serif;
-        text-align: center;
-    }
-    .navbar-toggler-icon{
-        font-size: 40px;
-    }
-    .search-input{
-        margin-left: 25%;
-        font-size: 60px;
-    }
-    .btn-search{
-        font-size: 60px;
-        margin-left:10px
-    }
+.bookPage-img{
+    width: 60%;
+}
 
-    .book-img{
-        margin-top: 100px;
-    }
+.btn-send{
+    background-color: #00c489;
+    color: white;
+}
+
+@media (max-width: 769px){
 
     .quote{
-        text-align: center;
-        margin-top: 100px; 
-        font-size: 100px;
-        font-family: 'Lexend Tera', sans-serif;
-    }
-    .card{
-        width: 100%; 
-        display: inline-block; 
-        margin-top: 10px;
-        background-color: #fffdf5;
-    }
-    .found{
-        text-align:center;
-        margin:20px 0px; 
-        font-size: 80px;
-        font-family: 'Lexend Tera', sans-serif;
-    }
-
-    .card-title{
-        font-size: 46px;
-        font-weight: bold;
-    }
-    .card-text{
-        font-size: 42px;
-    }
-    .btn-book{
         font-size: 40px;
     }
-
-    .error{
-        margin-top: 80px;
-    }
     
-    .alert{
-        text-align: center; 
-        font-size: 80px;
-    }
-
-    #login{
-        color:black;
-        background-color:#fffefa; 
-        padding-top:15px; 
-        padding-bottom:15px;
-        margin-top: 10%;
-        width: 100%;
-    }
-    .user{
-        font-size: 54px;
-    }
-    .important{
-        font-size: 38px;
-    }
-
-    .btn-login{
-        font-size: 40px;
-    }
-
-    .user-imput{
-        font-size: 40px;
-    }
-
-    .cover-img{
-        width:400px;
-        margin-left:20px; 
-        margin-top:20px;
-    }
-    
-    .card-header{
-        margin-top: 20px; 
-        background-color: black; 
-        color:white; 
-        font-size: 36px; 
-        font-family:'Montaga', serif;
-    }
-    
-    .reviews-title{
-        margin-top: 50px; 
-        font-family: 'Lexend Tera', sans-serif;
-        font-size: 60px;
-    }
-    
-    .review{
-        padding-top: 10px; 
-        margin-bottom:5px;
-        font-size: 30px;
-    }
-    
-    .data{
-        margin-left: 20px;
-        font-size: 34px;
-    }
-    .reviews-page{
-        margin-left: 6%;
-        margin-right: 6%;
-    }
-
-    .text-info{
-        font-size: 30px;
-    }
-
-    .textarea{
-        font-size: 30px;
-    }
-
-    .btn-submit{
-        font-size: 30px;
-    }
-    .custom-select{
-        font-size: 30px;
-    }
-
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px){
-    .nav-item{
-        font-size: 36px;
-        font-family: 'Sora', sans-serif;
-    }
-    .search-input{
-        font-size: 30px;
-    }
-    .btn-search{
-        font-size: 30px;
-        margin-left: 6px;
-    }
-
-    .card-title{
-        font-size: 34px;
-        font-weight: bold;
-    }
-    .card-text{
-        font-size: 28px;
-    }
-    .btn-book{
-        font-size: 28px;
-    }
-    .user{
-        font-size: 48px;
-    }
-
-    .important{
-        font-size: 30px;
-    }
-
-    .btn-login{
-        font-size: 36px;
-    }
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1024px) {
-    .nav-item{
-        font-size: 18px;
-        font-family: 'Sora', sans-serif;
-    }
-    .search-input{
-        margin-left: 0%;
-        font-size: 18px;
-    }
-    .btn-search{
-        font-size: 18px;
-        margin-left: 6px;
-    }
     .book-img{
-        margin-top: 40px;
-        height: 100%; 
-        width: 100%;
-    }
-    .quote{
-        text-align: center;
-        margin-top: 50px; 
-        font-size: 40px;
-        font-family: 'Lexend Tera', sans-serif;
-    }
-    .card{
-        width: 367px; 
-        display: inline-block; 
-        margin-top: 2px;
-        background-color: #fffdf5;
-    }
-    .found{
-        text-align:center;
-        margin:20px 0px; 
-        font-family: 'Lexend Tera', sans-serif;
-        font-size: 50px;
-    }
-
-    .card-title{
-        font-size: 20px;
-        font-weight: bold;
-    }
-    .card-text{
-        font-size: 16px;
-    }
-    .btn-book{
-        font-size: 16px;
-    }
-
-    .error{
         margin-top: 20px;
     }
+
+    .form-info{
+        margin-top: 30%;
+        width: 80%;
+    }
+
+    .navbar{
+        padding: 10px !important;
+        border-bottom: 0px;
+    }
+
     
-    .alert{
-        text-align: center; 
-        font-size: 40px;
-    }
-
-    #login{
-        color:black;
-        background-color:#fffefa; 
-        padding-top:15px; 
-        padding-bottom:15px;
-        margin-top: 6%;
-        width: 30%;
-    }
-
-    .user{
-        font-size: 22px;
-    }
-    .important{
-        font-size: 16px;
-    }
-
-    .btn-login{
-        font-size: 16px;
-    }
-
-    .user-imput{
-        font-size: 16px;
-    }
-
-    .cover-img{
-        width:225px;
-        margin-left:20px; 
-        margin-top:20px;
-    }
-    
-    .card-header{
-        margin-top: 20px; 
-        background-color: black; 
-        color:white; 
-        font-size: 20px; 
-        font-family:'Montaga', serif;
-    }
-    
-    .reviews-title{
-        margin-top: 50px; 
-        font-family: 'Lexend Tera', sans-serif;
-        font-size: 30px;
-    }
-    
-    .review{
-        padding-top: 10px; 
-        margin-bottom:5px;
-        font-size: 16px;
-    }
-    
-    .data{
-        font-size: 16px;
-        margin-left: 20px;
-    }
-    .reviews-page{
-        margin-left: 20%;
-        margin-right: 20%;
-    }
-
-    .text-info{
-        font-size: 20px;
-    }
-    .textarea{
-        font-size: 16px;
-    }
-
-    .btn-submit{
-        font-size: 16px;
-    }
-    .custom-select{
-        font-size: 16px;
+    .bookPage-img{
+        width: 100%;
     }
 }

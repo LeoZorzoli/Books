@@ -1,19 +1,25 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="container" >
-    <h1 class="found">Found books</h1>
-    <hr>
-{% for book in books %}
-{% if data != ''%}
-    <div class="card">
-        <div class="card-body">
-          <p class="card-title"><i class="fa fa-book"></i>{{book.title}}</p>
-          <p class="card-text"><i class="fa fa-info"></i>"Written by: {{book.author}} <br> in {{book.year}}</p>
-          <a href="search/{{book.isbn}}" class="btn btn-book btn-info"> <i class="fa fa-chevron-right"></i>BookPage</a>
-        </div>
-    </div>
-{% endif %}
-{% endfor %}
-</div>
+
+                    <div class="books">
+                        <p class="founded">Founded Books</p>
+                        
+                            <div class="row">
+                                {% for book in books %}
+                                <div class="book col-md-6 col-sm-12 col-xl-2 image__box">
+                                    <img  class="img-fluid img-responsive" src="http://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg">
+                                    <div class="text__box">
+                    
+                                        <p class="book-info top">{{book.title}}</p>
+                                        <p class="book-info">{{book.author}}</p>
+                                        <p class="book-info">{{book.year}}</p>
+                                        <p class="book-info"><a class="link" href="search/{{book.isbn}}"></i>Book page</a></p>
+                                    </div>
+                                </div>
+                    
+                                {% endfor %}
+                            </div>
+                        
+                    </div>
 {% endblock %}

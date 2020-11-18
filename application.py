@@ -113,6 +113,7 @@ def search():
         books = db.execute("SELECT * FROM books WHERE title ILIKE '%"+data+"%' or isbn ILIKE '%"+data+"%' or author ILIKE '%"+data+"%' or year ILIKE '%"+data+"%'").fetchall()
         if len(books) == 0:
             return render_template("error.html", message="No coincidence")
+
         return render_template("search.html", books = books, data = data)
         
 @app.route("/search/<isbn>", methods=['GET', 'POST'])

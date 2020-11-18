@@ -1,20 +1,26 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="reviews-page">
+<div class="container">
     {% for book in data %}
-    <div class="d-inline-flex">
-        <img class="cover-img" src="http://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg">    
-        <ul class="list-group data">
-            <div class="card-header"><strong>{{book.title}}</strong></div>
-            <li class="list-group-item"><strong>Author</strong>: {{book.author}}</li>
-            <li class="list-group-item"><strong>Year</strong>: {{book.year}}</li>
-            <li class="list-group-item"><strong>Isbn</strong>: {{book.isbn}}</li>
-            <li class="list-group-item"><strong>Rating</strong>: {{work_ratings_count}}</li>
-            <li class="list-group-item"><strong>Average rate</strong>: {{average_rating}}</li>
-        </ul>
+    <div class="row">
+        <div class="col-md-12 col-lg-6">
+            <img class="bookPage-img book-img img-fluid img-responsive" src="http://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg">   
+        </div> 
+        <div class="col-md-12 col-lg-4">
+            <ul class="list-group data">
+                <li class="list-group-item"><strong>{{book.title}}</strong></li>
+                <li class="list-group-item"><strong>Author</strong>: {{book.author}}</li>
+                <li class="list-group-item"><strong>Year</strong>: {{book.year}}</li>
+                <li class="list-group-item"><strong>Isbn</strong>: {{book.isbn}}</li>
+                <li class="list-group-item"><strong>Rating</strong>: {{work_ratings_count}}</li>
+                <li class="list-group-item"><strong>Average rate</strong>: {{average_rating}}</li>
+            </ul>
+        </div>
     </div>
-    <ul class="list-group list-group-flush"><p class="reviews-title"><strong>Reviews</strong></p>
+    {% if reviews %}
+        <ul class="list-group list-group-flush"><p class="reviews-title"><strong>Reviews</strong></p>
+    {% endif %}
     {% for review in reviews %}
     {% if review.rating >= 3 %}
         <li class="review list-group-item list-group-item-success shadow p-3 mb-5 "><i class="fa fa-thumbs-o-up"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong> </li>
@@ -24,7 +30,7 @@
     {% endfor %}
     </ul>
     <form class='form-group' method="post">
-        <label class='text-info'><i class="fa fa-pencil"></i>Write your review...</label>
+        <label class="write-review"><i class="fa fa-pencil"></i>Write your review...</label>
             <textarea class="textarea form-control" name="textarea" placeholder="Review" required></textarea>
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
@@ -38,7 +44,9 @@
                     </select> 
                 </div>
             </div>
-        <button class="btn-submit my-2 btn btn-info" type="submit"><i class="fa fa-check-circle"></i>Send Review</button>
+            <div class="btn-right">
+                <button class="btn-submit my-2 btn btn-send" type="submit"><i class="fa fa-check-circle"></i>Send Review</button>
+            </div>
     </form>
 </div>
     {% endfor %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="container shadow" id="login">
+<div class="container form-info" id="login">
     <form action="/register" method="post">
         <div class="form-group" style="padding-top:8px;">
             <label class="user" for="validationCustom01"><strong>Username</strong></label>
@@ -16,7 +16,8 @@
             <label class="user" for="validationCustom01"><strong>Confirm password</strong></label>
             <input id='confirm-pass' class="form-control user-imput" name="confirm-password" placeholder="Confirm Password" type="password" required>
         </div>
-        <button id='submit' class="btn btn-login btn-info" type="submit">Register</button>
+        <button id='submit' class="btn btn-login btn-send" type="submit">Register</button>
+
     </form>
 </div>
 

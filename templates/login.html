@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="container shadow" id="login">
+<div class="container form-info" id="login">
     <form action="/login" method="post">
         <div class="form-group">
             <label class="user" for="validationCustom01"><strong>Username</strong></label>
@@ -12,7 +12,7 @@
             <label class="user" for="validationCustom01"><strong>Password</strong></label>
             <input class="form-control user-imput" name="password" placeholder="Password" type="password" required>
         </div>
-        <button class="btn-login btn btn-info" type="submit">Log In</button>
+        <button class="btn-login btn btn-send" type="submit">Log In</button>
     </form>
  </div>
 {% endblock %}
