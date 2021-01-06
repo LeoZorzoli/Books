@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="container form-info" id="login">
+<div class="container form-info  img-login" id="login">
     <form action="/login" method="post">
         <div class="form-group">
             <p style="color: red;">{{message}}</p>
@@ -13,7 +13,10 @@
             <label class="user" for="validationCustom01"><strong>Password</strong></label>
             <input class="form-control user-imput" name="password" placeholder="Password" type="password" required>
         </div>
-        <button class="btn-login btn btn-send" type="submit">Log In</button>
+
+        <div class="btn-right">
+            <button class="btn-login btn btn-send" type="submit">Log In</button>
+        </div>
     </form>
  </div>
 {% endblock %}

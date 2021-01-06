@@ -3,11 +3,11 @@
 {% block body %}
 <div class="container">
     {% for book in data %}
-    <div class="row">
-        <div class="col-md-12 col-lg-6">
+    <div class="row book">
+        <div class="col-md-6 col-xs-6 col-xl-5 book-img">
             <img class="bookPage-img book-img img-fluid img-responsive" src="http://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg">   
         </div> 
-        <div class="col-md-12 col-lg-4">
+        <div class="col-md-6 col-xs-6 col-xl-4">
             <ul class="list-group data">
                 <li class="list-group-item"><strong>{{book.title}}</strong></li>
                 <li class="list-group-item"><strong>Author</strong>: {{book.author}}</li>
@@ -18,17 +18,6 @@
             </ul>
         </div>
     </div>
-    {% if reviews %}
-        <ul class="list-group list-group-flush"><p class="reviews-title"><strong>Reviews</strong></p>
-    {% endif %}
-    {% for review in reviews %}
-    {% if review.rating >= 3 %}
-        <li class="review list-group-item p-3 mb-2 "><i class="fa fa-thumbs-o-up"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong> </li>
-    {% else %}
-        <li class="review list-group-item p-3 mb-2"><i class="fa fa-thumbs-o-down"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong></li>
-    {% endif %}
-    {% endfor %}
-    </ul>
     <form class='form-group' method="post">
         <label class="write-review"><i class="fa fa-pencil"></i>Write your review...</label>
             <textarea class="textarea form-control" name="textarea" placeholder="Review" required></textarea>
@@ -45,9 +34,20 @@
                 </div>
             </div>
             <div class="btn-right">
-                <button class="btn-submit my-2 btn btn-send" type="submit"><i class="fa fa-check-circle"></i>Send Review</button>
+                <button class="btn-submit my-2 btn btn-send" type="submit">Send Review</button>
             </div>
     </form>
+    {% if reviews %}
+        <ul class="list-group list-group-flush"><p class="reviews-title"><strong>Reviews</strong></p>
+    {% endif %}
+    {% for review in reviews %}
+        {% if review.rating >= 3 %}
+            <li class="review list-group-item p-3 mb-2 "><i class="fa fa-thumbs-o-up"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong> </li>
+        {% else %}
+            <li class="review list-group-item p-3 mb-2"><i class="fa fa-thumbs-o-down"></i> <i><b>Rate</b></i>: {{review.rating}} <br> {{review.review}} <br> Sended by <strong>{{review.username.title()}}</strong></li>
+        {% endif %}
+    {% endfor %}
+        </ul>
 </div>
     {% endfor %}
 {% endblock %}

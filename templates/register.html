@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="container form-info" id="login">
+<div class="container form-info img-register" id="login">
     <form action="/register" method="post">
         <div class="form-group" style="padding-top:8px;">
             <label class="user" for="validationCustom01"><strong>Username</strong></label>
@@ -9,15 +9,16 @@
         </div>
         <div class="form-group">
             <label class="user" for="validationCustom01"><strong>Password</strong></label>
-            <label class="important">Must contain at least 8 characters, including a letter and a number</label>
+            <p class="important"> <strong style="color:red;">*</strong> Must contain at least 8 characters, including a letter and a number</p>
             <input id='pass' class="form-control user-imput" name="password" placeholder="Password" type="password" required>
         </div>
         <div class="form-group">
             <label class="user" for="validationCustom01"><strong>Confirm password</strong></label>
             <input id='confirm-pass' class="form-control user-imput" name="confirm-password" placeholder="Confirm Password" type="password" required>
         </div>
-        <button id='submit' class="btn btn-login btn-send" type="submit">Register</button>
-
+        <div class="btn-right">
+            <button id='submit' class="btn btn-login btn-send" type="submit">Register</button>
+        </div>
     </form>
 </div>
 

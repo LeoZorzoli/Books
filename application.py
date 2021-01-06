@@ -109,8 +109,9 @@ def search():
     else:
         data = request.form.get("book")
         if data == '':
-            return render_template("error.html", message= "Insert the isbn, name, author or year of a Book")
-        books = db.execute("SELECT * FROM books WHERE title ILIKE '%"+data+"%' or isbn ILIKE '%"+data+"%' or author ILIKE '%"+data+"%' or year ILIKE '%"+data+"%'").fetchall()
+            books = db.execute("SELECT * FROM books").fetchall()
+        else:
+            books = db.execute("SELECT * FROM books WHERE title ILIKE '%"+data+"%' or isbn ILIKE '%"+data+"%' or author ILIKE '%"+data+"%' or year ILIKE '%"+data+"%'").fetchall()
         if len(books) == 0:
             return render_template("error.html", message="No coincidence")
 
@@ -119,6 +120,8 @@ def search():
 @app.route("/search/<isbn>", methods=['GET', 'POST'])
 @login_required
 def book(isbn):
+
+    print("SESSION", session)
 
     if request.method == 'POST':
         currentUser = session["user_id"]
@@ -153,25 +156,28 @@ def book(isbn):
         return redirect ("/search/" + isbn)
 
     else:
-        # Info goodreads
-        res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "sM3fmQ5RNWvuEO83ippaA", "isbns": isbn})
-        average_rating=res.json()['books'][0]['average_rating']
-        work_ratings_count=res.json()['books'][0]['work_ratings_count']
+        try:
+            # Info goodreads
+            res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "sM3fmQ5RNWvuEO83ippaA", "isbns": isbn})
+            average_rating=res.json()['books'][0]['average_rating']
+            work_ratings_count=res.json()['books'][0]['work_ratings_count']
 
-        row = db.execute("SELECT id FROM books WHERE isbn = :isbn",
-                        {"isbn": isbn})
+            row = db.execute("SELECT id FROM books WHERE isbn = :isbn",
+                {"isbn": isbn})
 
-        book = db.execute("SELECT isbn FROM books WHERE isbn = :isbn", {"isbn": isbn})
+            book = db.execute("SELECT isbn FROM books WHERE isbn = :isbn", {"isbn": isbn})
 
-        book = row.fetchone() 
-        book = book[0]
+            book = row.fetchone() 
+            book = book[0]
+
+        except ValueError:
+            return render_template("error.html", message="No such book.")
+
+
 
         results = db.execute("SELECT users.username, review, rating FROM users INNER JOIN reviews ON users.id = reviews.user_id WHERE book_id = :book",
                                                 {"book": book})                                 
         reviews = results.fetchall()
-
-        if book is None:
-            return render_template("error.html", message="No such book.")
             
         data = db.execute("SELECT * FROM books WHERE isbn = :isbn", {"isbn":isbn})
         return render_template("book.html", data = data, book = book, average_rating=average_rating,work_ratings_count=work_ratings_count, reviews = reviews)

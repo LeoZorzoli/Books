@@ -12,36 +12,34 @@
         <link href="{{ url_for('static', filename='css/main.css') }}" type="text/css" rel="stylesheet">
       </head>
     <body>
-        <div class="principal">
+        <div class="principal container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+              <a class="navbar-brand nav-link home" href="/"><i class="fa fa-home"></i></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                  <ul class="navbar-nav">
-                      <a class="nav-link home" href="/"><i class="fa fa-home"></i></a>
-                  </ul>
                   
                   <ul class="navbar-nav ml-auto">
                     
                     {% if session.user_id %}
                     <form class="form-inline" action="/search" method="post">
                       <div class="input-group">
-                      <button class="btn-search btn btn-light" type="submit"><i class="fa fa-search"></i></button>
+                      <button class="btn-search btn" type="submit"><i class="fa fa-search"></i></button>
                       <input class="search-input form-control mr-lg-2" name="book" type="search" placeholder="Search Book" aria-label="Search">
                     </div>
                     </form>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user-o"></i>{{session.user_name.title()}}
+                        {{session.user_name.title()}}
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="nav-item dropdown-item btn-success" id="logout" href="/logout"><i class="fa fa-sign-out"></i>Logout</a>
+                        <a class="nav-item dropdown-item btn-secondary" id="logout" href="/logout"><i class="fa fa-sign-out"></i>Logout</a>
                       </div>
                     </li>
                     {% else %}
-                    <li class="nav-item"><a class="nav-link" href="/login"><i class="fa fa-sign-in"></i>Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/register"><i class="fa fa-plus-square-o"></i>Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
                     {% endif %}
                   </ul>
               </nav>
