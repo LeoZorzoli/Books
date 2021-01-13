@@ -1,22 +1,28 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="container form-info  img-login" id="login">
-    <form action="/login" method="post">
-        <div class="form-group">
-            <p style="color: red;">{{message}}</p>
-            <label class="user" for="validationCustom01"><strong>Username</strong></label>
-            <p class="important"> <strong style="color:red;">*</strong> Capital letters matter</p>
-            <input class="form-control user-imput" autofocus class="form-control" name="username" placeholder="Username" type="text" required>
+<div class="container" id="login">
+    <div class="row">
+        <div class="col-xl-6 form-info"> 
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <p style="color: red;">{{message}}</p>
+                    <label class="user" for="validationCustom01"><strong>Username</strong></label>
+                    <p class="important"> <strong style="color:red;">*</strong> Capital letters matter</p>
+                    <input class="form-control user-imput" autofocus class="form-control" name="username" placeholder="Username" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label class="user" for="validationCustom01"><strong>Password</strong></label>
+                    <input class="form-control user-imput" name="password" placeholder="Password" type="password" required>
+                </div>
+        
+                <div class="btn-right">
+                    <button class="btn-login btn btn-send" type="submit">Log In</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label class="user" for="validationCustom01"><strong>Password</strong></label>
-            <input class="form-control user-imput" name="password" placeholder="Password" type="password" required>
-        </div>
+        <div class="col-xl-6 img-login"></div>
+    </div>
 
-        <div class="btn-right">
-            <button class="btn-login btn btn-send" type="submit">Log In</button>
-        </div>
-    </form>
  </div>
 {% endblock %}

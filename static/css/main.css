@@ -14,6 +14,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
+    left: 80px;
 }
 
 .img-login{
@@ -22,6 +23,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
+    left: -80px;
 }
 
 .img-right{
@@ -78,11 +80,8 @@ body{
 
 .form-info{
     margin-top: 20px;
-    width: 32%;
     padding: 20px;
-    border-top: 1px solid #c9c9c9;
-    border-left: 1px solid #c9c9c9;
-    box-shadow: 2px 2px 2px #adadad;
+    left: 80px;
 }
 
 .nav-link{
@@ -267,23 +266,13 @@ i{
         width: 100%;
         border: none;
         font-size: 22px;
+        left: 0px;
     }
 
-    .form-group{
-        color: #f77f5e;
-    }
 
     .important{
         font-size: 18px;
         color: black;
-    }
-
-    .btn-send{
-        background-color: #9162de;
-    }
-    
-    .btn-send:hover{
-        background-color: #f77f5e; 
     }
     
     .navbar{
@@ -293,7 +282,9 @@ i{
 
     .img-login, .img-register, .img-right, .img-error{
         height: 600px;
+        left: 0px;
     }
+    
 
     .text-left{
         margin-top: 0px;
