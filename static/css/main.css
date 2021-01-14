@@ -89,7 +89,6 @@ body{
     font-family: monospace !important;
     font-size: 20px;
     text-align: center;
-    font-family: monospace;
     margin: 4px;
     padding: 32px !important;
     align-items: center !important;
@@ -109,6 +108,7 @@ body{
 .footer{
     font-family: 'Roboto Mono', monospace;
     font-size: 20px;
+    margin-left: 20px;
 }
 
 .write-review{
@@ -295,7 +295,59 @@ i{
     }
 
     .quote{
+        font-size: 40px !important;
+    }
+
+    .text-strong{
+        font-size: 50px;
+    }
+
+    .book-img{
+        margin: 0px !important;
+    }
+}
+
+
+@media (max-width: 1025px){
+
+    .quote{
         font-size: 40px;
+    }
+
+    .form-info{
+        width: 100%;
+        border: none;
+        font-size: 22px;
+        left: 0px;
+    }
+
+
+    .important{
+        font-size: 18px;
+        color: black;
+    }
+    
+    .navbar{
+        padding: 10px !important;
+        border-bottom: 0px;
+    }
+
+    .img-login, .img-register, .img-right, .img-error{
+        height: 800px;
+        left: 0px;
+    }
+    
+
+    .text-left{
+        margin-top:100px;
+    }
+    
+    .index-container{
+        padding: 10px;
+    }
+
+    .quote{
+        font-size: 60px;
     }
 
     .text-strong{
